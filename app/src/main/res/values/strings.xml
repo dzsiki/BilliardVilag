@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Billiárd Világ</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="email_address">E-mail cím</string>
+    <string name="password_again">Jelszó megerősítése</string>
+    <string name="cancel">Mégse</string>
+
+    <string name="item_placeholder">Időpont</string>
+    <string name="item_info_placeholder">Leírás</string>
+    <string name="bejelentkez_s_google_fi_kkal">Bejelentkezés google fiókkal</string>
+    <string name="lefoglalas">Lefoglalás</string>
+
+
+</resources>
