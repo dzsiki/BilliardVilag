@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1024389161672",
+    "project_id": "mobilbilliard",
+    "storage_bucket": "mobilbilliard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024389161672:android:032ac61a71ebdd23b57bfd",
+        "android_client_info": {
+          "package_name": "com.billiard.terem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024389161672-6n0o2d5usrdal6n8bkukmc1r4ipjak36.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.billiard.terem",
+            "certificate_hash": "e57ce9a8cbe23214c1bc0d86992cf8bfb45cadba"
+          }
+        },
+        {
+          "client_id": "1024389161672-f84h51gki1gg98sdalpsf28pjsb055bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5YwGXTGSrXi_fNAV5Foz7TNugxuyf8Z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024389161672-f84h51gki1gg98sdalpsf28pjsb055bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
