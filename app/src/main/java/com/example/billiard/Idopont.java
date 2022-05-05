@@ -13,8 +13,7 @@ public class Idopont {
         this.foglalt = foglalt;
     }
 
-    public Idopont() {
-    }
+    public Idopont() { }
 
     public String getInfo() {
         return info;
@@ -23,7 +22,6 @@ public class Idopont {
         return imageResource;
     }
     public boolean isFoglalt() { return foglalt; }
-
     public String getId() {
         return id;
     }

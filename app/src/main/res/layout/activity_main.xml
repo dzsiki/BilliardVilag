@@ -77,7 +77,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:onClick="loginWithGoogle"
-        android:text="@string/bejelentkez_s_google_fi_kkal"
+        android:text="@string/SignWithGoogleAcc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

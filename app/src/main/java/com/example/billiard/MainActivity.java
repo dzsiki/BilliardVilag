@@ -10,13 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -26,12 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import java.util.Objects;
 
-public class MainActivity
-        extends AppCompatActivity
-        implements LoaderManager.LoaderCallbacks<String> {
+public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getName();
-    private static final String PREF_KEY = MainActivity.class.getPackage().toString();
+    private static final String PREF_KEY = Objects.requireNonNull(MainActivity.class.getPackage()).toString();
     private static final int RC_SIGN_IN = 123;
     private static final int SECRET_KEY = 99;
 
@@ -61,8 +54,6 @@ public class MainActivity
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        getSupportLoaderManager().restartLoader(0, null, this);
-        Log.i(LOG_TAG, "onCreate");
 
         loginB =findViewById(R.id.loginButton);
         googleB =findViewById(R.id.googleSignInButton);
@@ -83,10 +74,9 @@ public class MainActivity
 
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d(LOG_TAG, "firebaseAuthWithGoogle:" + account.getId());
-                firebaseAuthWithGoogle(account.getIdToken());
+                firebaseAuthWithGoogle(Objects.requireNonNull(account).getIdToken());
             } catch (ApiException e) {
-                Log.w(LOG_TAG, "Google sign in failed", e);
+                Log.w(LOG_TAG, "Google bejelentkezes sikertelen, lepj be email+jelszoval", e);
             }
         }
     }
@@ -95,12 +85,9 @@ public class MainActivity
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
-                // Sign in success, update UI with the signed-in user's information
-                Log.d(LOG_TAG, "signInWithCredential:success");
-                startShopping();
+                startDating();
             } else {
-                // If sign in fails, display a message to the user.
-                Log.w(LOG_TAG, "signInWithCredential:failure", task.getException());
+                Log.w(LOG_TAG, "Hiba a bejelentkezes soran:", task.getException());
             }
         });
     }
@@ -110,17 +97,15 @@ public class MainActivity
         String password = passwordET.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if(task.isSuccessful()){
-                Log.d(LOG_TAG, "User loged in successfully");
-                startShopping();
+                startDating();
             } else {
-                Log.d(LOG_TAG, "User log in fail");
-                Toast.makeText(MainActivity.this, "User log in fail: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Hiba a bejelentkezes soran: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void startShopping() {
-        Intent intent = new Intent(this, ShopListActivity.class);
+    private void startDating() {
+        Intent intent = new Intent(this, DateListActivity.class);
         startActivity(intent);
     }
 
@@ -143,21 +128,5 @@ public class MainActivity
         editor.putString("email", emailET.getText().toString());
         editor.putString("password", passwordET.getText().toString());
         editor.apply();
-
-        Log.i(LOG_TAG, "onPause");
-    }
-    @NonNull
-    @Override
-    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new RandomLoader(this);
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-    }
-
-    @Override
-    public void onLoaderReset(@NonNull Loader<String> loader) {
-
     }
 }

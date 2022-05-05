@@ -9,8 +9,8 @@
 
     <string name="item_placeholder">Időpont</string>
     <string name="item_info_placeholder">Leírás</string>
-    <string name="bejelentkez_s_google_fi_kkal">Bejelentkezés google fiókkal</string>
+    <string name="SignWithGoogleAcc">Bejelentkezés google fiókkal</string>
     <string name="lefoglalas">Lefoglalás</string>
-
+    <string name="idopont">\"Időpont\"</string>
 
 </resources>
