@@ -22,6 +22,51 @@
           }
         },
         {
+          "client_id": "1024389161672-8em5ho32m27i1p0pj0q959tsd9a7t31a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.billiard.terem",
+            "certificate_hash": "3904315520dcbdc7197da9f5a471fe4884ea408d"
+          }
+        },
+        {
+          "client_id": "1024389161672-f84h51gki1gg98sdalpsf28pjsb055bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5YwGXTGSrXi_fNAV5Foz7TNugxuyf8Z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024389161672-f84h51gki1gg98sdalpsf28pjsb055bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024389161672:android:f370bb9540bb6a99b57bfd",
+        "android_client_info": {
+          "package_name": "com.example.billiard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024389161672-l8mumq6l9efiihioscl8ek0fu98iv4gh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.billiard",
+            "certificate_hash": "3904315520dcbdc7197da9f5a471fe4884ea408d"
+          }
+        },
+        {
           "client_id": "1024389161672-f84h51gki1gg98sdalpsf28pjsb055bt.apps.googleusercontent.com",
           "client_type": 3
         }
